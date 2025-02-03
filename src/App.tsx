@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <main className='h-screen flex flex-col md:flex-row items-center justify-center p-24 gap-6'>
+    <main className='h-screen sm:h-full flex flex-col md:flex-row items-center justify-center p-6 md:p-24 gap-6'>
       <section className='flex-1 flex flex-col gap-3'>
         <h1 className='text-gray-200 text-4xl font-medium'>Welcome</h1>
         <p className='text-gray-200'>
@@ -25,7 +25,7 @@ function App() {
       </section>
       <section className='flex-1 flex flex-col items-center justify-center h-full w-full gap-6'>
         <img
-          className='w-full sm:w-xs h-auto'
+          className='w-xs h-auto'
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Art_Institute_of_Chicago_logo.svg/1024px-Art_Institute_of_Chicago_logo.svg.png'
         />
         <p className='text-gray-100'>

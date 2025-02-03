@@ -22,7 +22,7 @@ export const ArtDetail = () => {
   }, [id]);
 
   return (
-    <>
+    <div>
       <div className='sticky top-0 h-auto mb-0 p-6 border-b-2 border-gray-200 bg-black'>
         <button
           className='text-gray-200 hover:text-yellow-300 transition-colors mb-2'
@@ -33,7 +33,7 @@ export const ArtDetail = () => {
         </button>
       </div>
       {imageData && (
-        <div className='max-h-full flex flex-col items-center justify-center gap-4 p-12'>
+        <div className='h-full flex flex-col items-center justify-center gap-4 p-12'>
           <h1 className='text-gray-200 text-2xl italic'>
             {imageData.title} by {imageData.artist_display}
           </h1>
@@ -63,6 +63,6 @@ export const ArtDetail = () => {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
