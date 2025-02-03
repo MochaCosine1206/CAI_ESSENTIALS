@@ -6,8 +6,10 @@ import { ArtistsScreen } from './pages/artists/Artists.tsx';
 import { ArtistDetail } from './pages/ArtistDetail/ArtistDetail.tsx';
 import { ArtDetail } from './pages/ArtDetail/ArtDetail.tsx';
 
+const baseName = import.meta.env.BASE_URL;
+
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename={baseName}>
     <Routes>
       <Route path='/' element={<App />} />
       <Route path='/artists' element={<ArtistsScreen />} />
