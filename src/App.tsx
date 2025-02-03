@@ -17,6 +17,11 @@ function App() {
           Collection. It's a great limited sample of the variety of work that is
           out there.
         </p>
+        <p className='text-gray-200'>
+          This project showcases my knowledge of Typescript, React, Jest,
+          Tailwind, and API use. I hope you enjoy it
+        </p>
+        <p className='text-gray-200'>-Steven</p>
       </section>
       <section className='flex-1 flex flex-col items-center justify-center h-full w-full gap-6'>
         <img
