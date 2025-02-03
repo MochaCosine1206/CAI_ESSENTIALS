@@ -112,7 +112,11 @@ export const ArtistsScreen = () => {
       }));
   };
 
-  const handleOnMouseOver = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleOnActivated = (
+    event:
+      | React.MouseEvent<HTMLAnchorElement>
+      | React.FocusEvent<HTMLAnchorElement>
+  ) => {
     const innerText = event.currentTarget.text;
     const foundArtist = artistData.find(
       (artist) => artist.artist_title === innerText
@@ -159,7 +163,10 @@ export const ArtistsScreen = () => {
           <div className='w-full max-w-4xl'>
             {groupArtistsByLetter(artistData).map(({ letter, artists }) => (
               <div key={letter} className='mb-8'>
-                <h2 className='text-2xl font-bold text-yellow-300 border-b-2 border-gray-200 mb-4 sticky top-24 bg-black py-2'>
+                <h2
+                  className='text-2xl font-bold text-yellow-300 border-b-2 border-gray-200 mb-4 sticky top-24 bg-black py-2'
+                  accessKey={letter.toLowerCase()}
+                >
                   {letter}
                 </h2>
                 <ul className='flex flex-col gap-2 pl-4'>
@@ -168,7 +175,9 @@ export const ArtistsScreen = () => {
                       <Link
                         to={`/artist/${artist.artist_id}`}
                         className='hover:text-yellow-300 transition-colors duration-200 ease-in-out text-gray-200'
-                        onMouseOver={handleOnMouseOver}
+                        onMouseOver={handleOnActivated}
+                        onFocus={handleOnActivated}
+                        title={`Link to detail about ${artist.artist_title}`}
                       >
                         {artist.artist_title || 'Unknown Artist'}
                       </Link>
