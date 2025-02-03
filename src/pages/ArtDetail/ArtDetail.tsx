@@ -34,7 +34,7 @@ export const ArtDetail = () => {
       </div>
       {imageData && (
         <div className='h-full flex flex-col items-center justify-center gap-4 p-12'>
-          <h1 className='text-gray-200 text-2xl italic'>
+          <h1 className='text-gray-200 font-semibold sm:text-2xl italic'>
             {imageData.title} by {imageData.artist_display}
           </h1>
           {!imageLoadError ? (

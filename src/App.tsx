@@ -3,9 +3,11 @@ import './App.css';
 
 function App() {
   return (
-    <main className='h-screen sm:h-full flex flex-col md:flex-row items-center justify-center p-6 md:p-24 gap-6'>
+    <main className='sm:h-screen flex flex-col sm:flex-row items-center justify-center p-6 sm:p-12 md:p-24 gap-2 sm:gap-6 mt-10 sm:mt-16 lg:mt-0 '>
       <section className='flex-1 flex flex-col gap-3'>
-        <h1 className='text-gray-200 text-4xl font-medium'>Welcome</h1>
+        <h1 className='text-gray-200 text-2xl sm:text-4xl font-medium'>
+          Welcome
+        </h1>
         <p className='text-gray-200'>
           This personal project is intended to bring together a demonstration of
           my development skills and love of art. I decided to use the Art
@@ -25,7 +27,7 @@ function App() {
       </section>
       <section className='flex-1 flex flex-col items-center justify-center h-full w-full gap-6'>
         <img
-          className='w-xs h-auto'
+          className='w-2xs sm:w-xs h-auto'
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Art_Institute_of_Chicago_logo.svg/1024px-Art_Institute_of_Chicago_logo.svg.png'
         />
         <p className='text-gray-100'>

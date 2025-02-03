@@ -151,7 +151,7 @@ export const ArtistsScreen = () => {
   }, [totalPages]);
 
   return (
-    <div className='h-full'>
+    <div>
       <div className='w-full z-10 sticky top-0 bg-black mb-8 p-4 h-24'>
         <h1 className='text-3xl font-bold text-gray-200 mb-2'>
           Explore the artists
