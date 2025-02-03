@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Artist, ArtworkItem } from '../../types';
 import { ImageGridComponent } from '../../components/ImageGrid/ImageGrid';
 
@@ -9,6 +9,7 @@ interface GroupedArtists {
 }
 
 export const ArtistsScreen = () => {
+  const location = useLocation();
   const [totalPages, setTotalPages] = useState<number>(0);
   const [artistData, setArtistData] = useState<Artist[]>(() => {
     const cached = localStorage.getItem('artistsData');
@@ -150,9 +151,13 @@ export const ArtistsScreen = () => {
     }
   }, [totalPages]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div>
-      <div className='w-full z-10 sticky top-0 bg-black mb-8 p-4 h-24'>
+      <div className='w-full z-10 sticky top-0 bg-black mb-2 sm:mb-8 p-4 h-24'>
         <h1 className='text-3xl font-bold text-gray-200 mb-2'>
           Explore the artists
         </h1>
