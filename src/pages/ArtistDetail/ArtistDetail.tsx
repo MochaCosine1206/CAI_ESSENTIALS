@@ -48,6 +48,7 @@ export const ArtistDetail = () => {
           <Link
             className='text-gray-200 hover:text-yellow-300 transition-colors mb-2'
             to='/artists'
+            data-testid='back-to-artist-list-button'
           >
             Back to Artists
           </Link>

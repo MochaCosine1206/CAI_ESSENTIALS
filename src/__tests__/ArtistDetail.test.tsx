@@ -1,8 +1,9 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { ArtistDetail } from '../pages/ArtistDetail/ArtistDetail';
 import fetchMock from 'jest-fetch-mock';
+import { ArtistsScreen } from '../pages/artists/Artists';
 
 fetchMock.enableMocks();
 
@@ -32,6 +33,7 @@ describe('ArtistDetail', () => {
     return render(
       <MemoryRouter initialEntries={['/artist/1']}>
         <Routes>
+          <Route path='/artists' element={<ArtistsScreen />} />
           <Route path='/artist/:id' element={<ArtistDetail />} />
         </Routes>
       </MemoryRouter>
@@ -82,5 +84,21 @@ describe('ArtistDetail', () => {
     expect(
       screen.getAllByText('No Image Available for this image ID.').length
     ).toBe(2);
+  });
+
+  test('navigates back when back button is clicked', async () => {
+    fetchMock.mockResponseOnce(JSON.stringify(mockArtistData));
+    fetchMock.mockResponseOnce(JSON.stringify(mockArtworksData));
+    renderComponent();
+
+    await waitFor(() => {
+      const linkElement = screen.getByTestId('back-to-artist-list-button');
+      expect(linkElement).toBeInTheDocument();
+      fireEvent.click(linkElement);
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId('artists-list')).toBeInTheDocument();
+    });
   });
 });
